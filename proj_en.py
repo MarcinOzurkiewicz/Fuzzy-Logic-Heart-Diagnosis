@@ -221,4 +221,16 @@ print("Coroner Heart Diagnosis:", defuzzified)
 
 fig, ax0 = plt.subplots(figsize=(7, 4))
 
-ax0.plot(y_risk, risk_not, 'r
+ax0.plot(y_risk, risk_not, 'r', linewidth = 0.5, linestyle = '--')
+ax0.plot(y_risk, risk_little, 'g', linewidth = 0.5, linestyle = '--')
+ax0.plot(y_risk, risk_mid, 'b', linewidth = 0.5, linestyle = '--')
+ax0.plot(y_risk, risk_high, 'y', linewidth = 0.5, linestyle = '--')
+ax0.plot(y_risk, risk_veryHigh, 'm', linewidth = 0.5, linestyle = '--')
+
+ax0.fill_between(y_risk, risk0, out_risk, facecolor = 'Orange', alpha = 0.7)
+ax0.plot([defuzzified , defuzzified], [0, result], 'k', linewidth = 1.5, alpha = 0.9)
+ax0.set_title('Centroid Deffuzification')
+
+plt.tight_layout()
+plt.show()
+
